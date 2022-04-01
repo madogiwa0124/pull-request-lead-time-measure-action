@@ -1,0 +1,24 @@
+name: "Pull Request lead time measure action"
+description: "GitHub Action to measure the time to close the last 100 pull requests."
+inputs:
+  base-branch:
+    description: "base branch"
+    required: true
+    default: "main"
+  repo-type:
+    description: "public or private"
+    required: true
+    default: "private"
+  percentile:
+    description: "output duration percentile"
+    required: true
+    default: 50
+  repo-token:
+    description: "repository token"
+    required: true
+outputs:
+  read-time:
+    description: "Time (hour) from creation to close of the Pull Request."
+runs:
+  using: "node16"
+  main: "dist/index.js"

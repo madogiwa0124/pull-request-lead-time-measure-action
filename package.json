@@ -1,0 +1,16 @@
+{
+  "name": "pull-request-lead-time-measure-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to measure the time to close the last 100 pull requests.",
+  "main": "index.js",
+  "author": "madogiwa0124",
+  "license": "MIT",
+  "scripts": {
+    "build": "ncc build index.js --license licenses.txt"
+  },
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "@vercel/ncc": "^0.33.3"
+  }
+}

@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    name: GitHub Action to measure the time to close the last 100 pull requests.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: run pull-request-lead-time-measure-action
+        uses: ./
+        id: pull-request-lead-time-measure-action
+        with:
+          base-branch: main
+          repo-type: public
+          percentile: 50
+          repo-token: ${{ secrets.MY_GITHUB_TOKEN }}
+      - name: Get the lead time
+        run: echo "The lead-time was ${{ steps.pull-request-lead-time-measure-action.outputs.lead-time }} hour."
