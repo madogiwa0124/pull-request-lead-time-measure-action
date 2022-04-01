@@ -34,7 +34,7 @@ The lead time was 0.30944444444444447 hour.
 
 ```yml
 - name: run pull-request-lead-time-measure-action
-  uses: madogiwa0124/pull-request-lead-time-measure-action
+  uses: madogiwa0124/pull-request-lead-time-measure-action@v0.1.0
   id: pull-request-lead-time-measure-action
   with:
     base-branch: main
